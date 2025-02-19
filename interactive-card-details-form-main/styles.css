@@ -143,6 +143,8 @@ input[type=number]
     position: relative;
     left: -325px;
     top: -20px;
+    border-radius: 0 0 3% 0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 .card-back
 {
@@ -153,6 +155,8 @@ input[type=number]
     position: relative;
     left: -223.5px;
     top: 20px;
+    border-radius: 0 0 3% 0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 #logo
 {
@@ -244,3 +248,4 @@ input[type=number]
     margin-top: 20px;
     margin-bottom: 30px;
 }
+
