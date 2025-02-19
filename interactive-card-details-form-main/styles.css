@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+}
+.left-background
+{
+    width: 30%;
+    height: 100vh;
+    overflow-y: hidden;
+    float: left;
+}
+.left-background img
+{
+    width: 100%;
+    height: 100%;
+}
+.right-side
+{
+    width: 70%;   
+    float: right;   
+}
+.fill-form-container
+{
+    align-items:center;
+    display:flex;
+    height: 100vh;
+}
+.fill-form
+{
+    margin: auto;
+    width: 40%;
+}
+.card-showcase-container
+{
+    display: flex;
+    position: absolute;
+}
