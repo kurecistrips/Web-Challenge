@@ -5,7 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="javascript.js">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
   
   <title>Interactive card details form</title>
 
@@ -24,16 +30,28 @@
       <div class="fill-form">
         <div class="name-form">
           <label for="holdername">cardholder name</label>
-          <input type="text" id="holdername">
+          <br>
+          <input type="text" id="holdername" placeholder="e.g. Jane Appleseed" size="32" maxlength="32" pattern="[a-zA-Z\s]*">
         </div>
         <div class="card-number">
           <label for="cardnum">card number</label>
-          <input type="text" id="cardnum">
+          <br>
+          <input type="text" id="cardnum" placeholder="e.g. 1234 5678 9100 0000" maxlength="19" pattern="\d*{4} \d{*4} \d*{4} \d*{4}"  oninput="formatCardNumber(this)">
+          <script>
+            function formatCardNumber(input) {
+                let value = input.value.replace(/\D/g, "");
+                value = value.replace(/(\d{4})/g, "$1 ").trim();
+                input.value = value.slice(0, 19);
+            }
+            </script>
         </div>
         <div class="exp-date-and-cvc">
           <label>exp. date (mm/yy)</label>
-          <input type="month" id="expmonth">
-          <input type="text" id="expyear">
+          <label for="cvc" id="cvc-label">CVC</label>
+          <br>
+          <input type="text" inputmode="numeric" id="expmonth" placeholder="MM" maxlength="2" pattern="(0[1-9]|1[0-2])">
+          <input type="text" id="expyear" placeholder="YY" maxlength="2" pattern="\d{2}">
+          <input type="text" id="cvc" placeholder="e.g. 123" maxlength="3" pattern="\d*">
         </div>
         <button>Confirm</button>
       </div>
@@ -41,14 +59,19 @@
     <div class="card-showcase-container">
       <div class="card-showcase">
         <div class="card-front">
-          <img src="images/bg-card-front.png" alt="front">
-          <img src="images/card-logo.svg" alt="logo">
-          
+          <img src="images/card-logo.svg" alt="logo" id="logo">
+          <p id="card-num-showcase">0000 0000 0000 0000</p>
+          <p id="card-name-showcase">Jane Appleseed</p>
+          <p id="card-exp-showcase">00/00</p>
+        </div>
+        <div class="card-back">
+          <p id="card-cvc-showcase">000</p>
         </div>
       </div>
     </div>
 
   </div>
+  
 
 <!--
   0000 0000 0000 0000

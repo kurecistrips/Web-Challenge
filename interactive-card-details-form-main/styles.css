@@ -1,5 +1,16 @@
 *{
     margin: 0;
+    font-family: "Space Grotesk", serif;
+}
+@keyframes  buttonHover{
+    0%
+    {
+        background-color: hsl(278, 68%, 11%);
+    }
+    100%
+    {
+        background-color: hsl(278, 94%, 30%);
+    }
 }
 .left-background
 {
@@ -17,6 +28,8 @@
 {
     width: 70%;   
     float: right;   
+    font-family: space;
+    background-color: hsl(0, 0%, 100%);
 }
 .fill-form-container
 {
@@ -27,10 +40,152 @@
 .fill-form
 {
     margin: auto;
+    width: 30%;
+}
+.fill-form label
+{
+    color: hsl(278, 68%, 11%);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+.fill-form:hover
+{
+    animation: inputBorderHover 1s ease;
+}
+#cvc-label
+{
+    margin-left: 52px;
+}
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button
+{
+    -webkit-appearance: none;
+}
+input[type=number]
+{
+    -moz-appearance: textfield;
+}
+.fill-form input
+{
+    border: 1px solid hsl(270, 3%, 87%);
+    font-size: 18px;
+    border-radius: 10px;
+    height: 40px;
+    padding-left: 15px;
+    width: 94%;
+    margin-top: 8px;
+    margin-bottom: 25px;
+    transition-duration: 0.5s;
+    
+}
+.fill-form input:hover
+{
+    border-color: hsl(249, 99%, 64%);
+}
+.fill-form input:focus
+{
+    outline: 0;
+    border-color: hsl(278, 94%, 30%); 
+}
+.fill-form input:invalid
+{
+    border-color: hsl(0, 100%, 66%);
+}
+.fill-form input::placeholder
+{
+    color: hsl(279, 6%, 55%);
+}
+#expmonth, #expyear
+{
+    height: 40px;
+    width: 18%;
+    margin-right: 7px;
+}
+#cvc
+{
     width: 40%;
+    margin-left: 12px;
+}
+.fill-form button
+{
+    margin-top: 22px;
+    background-color: hsl(278, 68%, 11%);
+    border: none;
+    border-radius: 10px;
+    color: hsl(0, 0%, 100%);
+    width: 100%;
+    height: 55px;
+    font-size: 18px;
+    transition-duration: 0.5s;
+    
+}
+.fill-form button:hover
+{
+    background-color: hsl(278, 94%, 30%);  
+}
+.fill-form button:active
+{
+    transition-duration: 0.0s;
+    background-color: hsl(249, 99%, 64%);
 }
 .card-showcase-container
 {
     display: flex;
     position: absolute;
+    top: 25%;
+}
+.card-front
+{
+    background-image: url(images/bg-card-front.png);
+    width: 447px;
+    height: 245px;
+    color: hsl(0, 0%, 100%);
+    position: relative;
+    left: -325px;
+    top: -20px;
+}
+.card-back
+{
+    background-image: url(images/bg-card-back.png);
+    width: 447px;
+    height: 245px;
+    color: hsl(0, 0%, 100%);
+    position: relative;
+    left: -223.5px;
+    top: 20px;
+}
+#logo
+{
+    margin-left: 30px;
+    margin-top: 30px;
+}
+#card-num-showcase
+{
+    font-size: 27px;
+    letter-spacing: 3px;
+    text-align: center;
+    position: relative;
+    top: 55px;
+}
+#card-name-showcase
+{
+    float: left;
+    margin-left: 43px;
+    text-transform: uppercase;
+    position: relative;
+    top: 85px;
+}
+#card-exp-showcase
+{
+    float: right;
+    margin-right: 43px;
+    position: relative;
+    top: 85px;
+}
+#card-cvc-showcase
+{
+    text-align: right;
+    position: relative;
+    top: 110px;
+    right: 60px;
 }
