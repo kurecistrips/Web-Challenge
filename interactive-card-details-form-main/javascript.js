@@ -13,6 +13,11 @@ const cardExpM = document.getElementById("card-exp-mm");
 const inputExpYY = document.getElementById("expyear");
 const cardExpY = document.getElementById("card-exp-yy");
 
+let namePattern = /^[a-zA-Z\s]*$/;
+let mmPattern = /^(0[1-9]|1[0-2])$/
+let yyPattern = /^\d{2}$/;
+let cvcPatter = /^\d*$/;
+
 
 inputNum.addEventListener("input", updateValue);
 inputName.addEventListener("input", updateValueName);
@@ -44,7 +49,7 @@ function updateValueExpY(e)
 
 function ButtonClick()
 {
-    if (inputNum.value == "" || inputName.value == "" || inputExpYY.value == "" || inputExpMM.value == "" || inputCVC.value == "")
+    if (inputNum.value == "" || inputNum.value.length < 19 || inputName.value == "" || inputExpYY.value == "" || inputExpMM.value == "" || inputCVC.value == "" || !namePattern.test(inputName.value) || !mmPattern.test(inputExpMM.value) || !yyPattern.test(inputExpYY.value) || !cvcPatter.test(inputCVC.value))
     {
 
     }
